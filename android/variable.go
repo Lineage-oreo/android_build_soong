@@ -99,6 +99,18 @@ type variableProperties struct {
 
 		// include Lineage variables
 		Lineage android.Product_variables
+
+                Has_legacy_camera_hal1 struct {
+                        Cflags []string
+                }
+
+               Uses_media_extensions struct {
+                        Cflags []string
+                }
+
+               Needs_text_relocations struct {
+                        Cppflags []string
+                }
 	} `android:"arch_variant"`
 }
 
@@ -170,6 +182,12 @@ type productVariables struct {
 	BtConfigIncludeDir *string `json:",omitempty"`
 
 	Override_rs_driver *string `json:",omitempty"`
+
+        Has_legacy_camera_hal1 *bool `json:",omitempty"`
+
+        Uses_media_extensions *bool `json:",omitempty"`
+
+        Needs_text_relocations *bool `json:",omitempty"`
 
 	DeviceKernelHeaders []string `json:",omitempty"`
 
