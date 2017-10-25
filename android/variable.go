@@ -111,6 +111,10 @@ type variableProperties struct {
                Needs_text_relocations struct {
                         Cppflags []string
                 }
+
+		Qcom_bsp_legacy struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -190,6 +194,8 @@ type productVariables struct {
         Needs_text_relocations *bool `json:",omitempty"`
 
 	DeviceKernelHeaders []string `json:",omitempty"`
+
+	Qcom_bsp_legacy            *bool `json:",omitempty"`
 
 	// include Lineage variables
 	Lineage android.ProductVariables
